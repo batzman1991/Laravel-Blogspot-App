@@ -37,7 +37,9 @@ Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-// Route::get('/', function () {
-//     if(Auth::check()){return Redirect::to('home');}
-//      return view('home');
-//  });
+Route::get('/', function () {
+    if(Auth::check()){return Redirect::to('home');}
+     return view('pages/index');
+ });
+
+ Route::get('profile','UserController@profile');

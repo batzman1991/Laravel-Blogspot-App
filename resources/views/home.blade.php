@@ -4,16 +4,16 @@
     <h1>Your Blog Posts</h1>
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            {{-- <a href="/posts/create" class="btn btn-primary mt-1 ">Create Post</a> --}}
+            <a href="/posts/create" class="btn btn-primary mt-1 ">Create Post</a>
             <div class="panel panel-default">
                 
-                <div class="card card text-white  mt-3" id="tcard">
+                <div class="card card  text-white mt-3" id="tcard">
 
                     <div class="panel-body">
                         
                          @if(count($posts ) > 0)
                         <table class="table table-striped">
-                            <tr>
+                            <tr id ="tcard">
                                 <th>Title</th>
                                 <th></th>
                                 <th></th>
