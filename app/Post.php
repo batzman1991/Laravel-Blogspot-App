@@ -1,7 +1,7 @@
 <?php
 
 namespace App;
-
+use App\User;
 use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
@@ -15,12 +15,7 @@ class Post extends Model
     public $timestamps=true;
 
     public function user(){
-        return$this ->belongsTO('App\User');
-    }
-
-    public function post(){
-
-        return $this->belongsTo('App\Post');
+        return$this ->belongsTO(User::class);
     }
 
 }
