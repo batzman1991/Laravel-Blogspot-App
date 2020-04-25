@@ -43,3 +43,4 @@ Route::get('/', function () {
  });
 
  Route::get('profile','UserController@profile');
+ Route::Post('profile','UserController@update_profile');
