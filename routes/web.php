@@ -37,6 +37,7 @@ Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+<<<<<<< HEAD
 //allows redirect after login to home page only 
 Route::get('/', function () {
     if(Auth::check()){return Redirect::to('home');}
@@ -44,3 +45,12 @@ Route::get('/', function () {
  });
 
 
+=======
+Route::get('/', function () {
+    if(Auth::check()){return Redirect::to('home');}
+     return view('pages/index');
+ });
+
+ Route::get('profile','UserController@profile');
+ Route::Post('profile','UserController@update_profile');
+>>>>>>> 2da0b761e66f42d61f2866d770212e46ba27ea9c

@@ -2,9 +2,16 @@
 
 @section('content')
 
-<h1> Create posts </h1>
 
-{!! Form::open(['action' => 'PostsController@store','method'=>'POST']) !!}
+
+
+<div class="card" id ="tcard">
+    <div class="card-header">
+        <h1> Create posts </h1>
+    </div>
+    <div class="card-body">
+      <blockquote class="blockquote mb-0">
+        {!! Form::open(['action' => 'PostsController@store','method'=>'POST']) !!}
 
 <div class ="form-group">
 
@@ -22,6 +29,15 @@
 
 {!! Form::close() !!}
 </div>
+
+
+</div>
+      </blockquote>
+    </div>
+  </div>
+
+
+
 
 
 @endsection 
