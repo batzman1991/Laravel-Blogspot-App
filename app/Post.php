@@ -8,6 +8,8 @@ class Post extends Model
 {
    // Table Name 
  
+   protected $fillable = ['title', 'body'];
+   
    protected $table = 'posts'; 
    // protected  
     public $primaryKey ='id'; 
@@ -15,7 +17,7 @@ class Post extends Model
     public $timestamps=true;
 
     public function user(){
-        return$this ->belongsTO(User::class);
+        return $this->belongsTo(User::class);
     }
 
 }

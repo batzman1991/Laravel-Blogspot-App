@@ -15,7 +15,6 @@
  Route::get('/about','PagesController@about');
  Route::get('/services','PagesController@services');
  Route::resource('posts','PostsController');
- Route::resource('users','PostsController');
  //Route::get('/ckeditor', 'CkeditorController@index');
 
 // Route::get('/', function() {
@@ -42,5 +41,15 @@ Route::get('/', function () {
      return view('pages/index');
  });
 
+// what is the profile route ? just show the profile
+// so you need one that says edit
+// one that process the edit 
+// and one that deletes the profile 
  Route::get('profile','UserController@profile');
+ Route::get('profle','Usercontroller@profilepub');
  Route::Post('profile','UserController@update_profile');
+
+Route::get('test','UserController@index');
+ 
+//  Route::get('profile.edit','UserController@editProfile');
+

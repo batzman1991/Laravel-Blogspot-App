@@ -15,10 +15,12 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('user_id');
             $table->string('title');
             $table->mediumText('body');
             $table->timestamps();
             $table->integer('likes')->default(0);
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

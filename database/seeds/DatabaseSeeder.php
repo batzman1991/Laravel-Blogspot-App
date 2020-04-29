@@ -1,9 +1,12 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\User;
+use App\Post;
 
 class DatabaseSeeder extends Seeder
 {
+
     /**
      * Seed the application's database.
      *
@@ -11,8 +14,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\User::class, 50)->create()->each(function ($user) {
-            $user->posts()->save(factory(App\Post::class, 5)->make());
+        factory(User::class, 50)->create()->each(function ($user) {
+            $user->posts()->saveMany(factory(Post::class, 5)->make());
         });
     }
 }

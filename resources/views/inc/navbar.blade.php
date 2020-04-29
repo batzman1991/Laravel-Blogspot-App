@@ -4,14 +4,8 @@
           {{ config('app.name', 'Loga') }}
       </a>
 
-<<<<<<< HEAD
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#app-navbar-collapse" >
-            <span class="navbar-toggler-icon"></span>
-        </button>
-=======
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
->>>>>>> 2da0b761e66f42d61f2866d770212e46ba27ea9c
 
         <div class="collapse navbar-collapse" id="app-navbar-collapse">
             <!-- Left Side Of Navbar -->

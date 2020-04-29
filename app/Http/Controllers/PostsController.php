@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreBlogPost;
 use App\Post; 
+use App\User;
 
 
 
@@ -50,22 +51,9 @@ class PostsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreBlogPost $request)
     {
-        $this-> validate($request,[
-
-            'title'=> 'required', 
-            'body'=> 'required',
-        ]);
-    
-        // create post 
-        $post = new Post; 
-        $post -> title =$request->input('title');
-        $post -> body = $request->input('body');
-        $post ->user_id = auth() -> user()->id; 
-        $post ->name = auth() -> user()->name;
-        $post -> save(); 
-
+        auth()->user()->posts()->create($request->all());
         return redirect('/posts')->with('success','Post Created');
     }
 
@@ -75,9 +63,8 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Post $post)
     {
-        $post = Post::find($id);
         return view('posts.show')->with('post', $post);
     }
 
@@ -87,8 +74,7 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {    $post= Post::find($id); 
+    public function edit(Post $post){
         //check for correct user 
         if(auth()->user()->id !== $post->user_id){
             return redirect('/posts')->with('error','Unathorized Page');
@@ -104,21 +90,12 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(StoreBlogPost $request, $id)
     {
-        $this-> validate($request,[
-
-            'title'=> 'required', 
-            'body'=> 'required',
-        ]);
-    
-        // create post 
-        $post = Post::find($id); 
-        $post -> title =$request->input('title');
-        $post -> body = $request->input('body');
-        $post -> save(); 
-
-        return redirect('/posts')->with('success','Post Updated ');
+        
+        $post = Post::find($id);
+        $post->update($request->all());
+        return redirect('/posts')->with('success','Post Updated');
     }
 
     /**
@@ -127,11 +104,13 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        $post = Post::find($id); 
+    public function destroy(Post $post)
+    { 
         $post->delete(); 
         return redirect('/posts')->with('success','Post Removed');
 
+
     }
+
+    
 }

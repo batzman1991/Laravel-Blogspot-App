@@ -1899,8 +1899,6 @@ module.exports = {
 
 /***/ }),
 
-<<<<<<< HEAD
-=======
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/assets/js/components/ExampleComponent.vue?vue&type=script&lang=js&":
 /*!**********************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/assets/js/components/ExampleComponent.vue?vue&type=script&lang=js& ***!
@@ -1934,15 +1932,12 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
->>>>>>> 2da0b761e66f42d61f2866d770212e46ba27ea9c
 /***/ "./node_modules/jquery/dist/jquery.js":
 /*!********************************************!*\
   !*** ./node_modules/jquery/dist/jquery.js ***!
   \********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
-<<<<<<< HEAD
-=======
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
  * jQuery JavaScript Library v3.5.0
@@ -6329,7 +6324,6 @@ var dataPriv = new Data();
 
 var dataUser = new Data();
 
->>>>>>> 2da0b761e66f42d61f2866d770212e46ba27ea9c
 
 
 //	Implementation Summary
