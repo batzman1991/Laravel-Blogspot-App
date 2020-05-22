@@ -1,5 +1,5 @@
 .
-# Laravel-Blogspt-App  
+# Laravel-Blogspot-App  
 
 ## Project Specification 
 
